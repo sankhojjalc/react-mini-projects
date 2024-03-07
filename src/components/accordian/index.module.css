@@ -1,0 +1,19 @@
+.wrapper {
+  height: auto;
+  width: 500px;
+  margin: auto;
+}
+.accordianWrapper {
+  text-align: center;
+  display: block;
+  height: max-content;
+  width: 100%;
+  background-color: darkgray;
+  padding: 20px 0 20px;
+  margin-top: 20px;
+}
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
