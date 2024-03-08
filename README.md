@@ -9,4 +9,8 @@ This repository contains a collection of reusable React components that can be e
 3. [Star Rating](#star-rating)
 4. [Image Slider](#image-slider)
 
+### Future Plans:
+
+1. Count down Timer with Two buttons - start/stop and reset. Starts with 0 and increments every sec.
+
 AND many more to come.
