@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  background-image: url("./all_country_flags_with_names.jpg");
+  min-height: 100vh;
+  object-fit: scale-down;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchWrapper {
+  width: 600px;
+  height: 400px;
+  border-radius: 10%;
+  background-color: antiquewhite;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.searchWrapperChild {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 420px;
+  margin: 50px auto;
+  max-height: 200px;
+}
+
+input {
+  width: 400px;
+  height: 25px;
+  border-radius: 20px;
+}
+
+.capital {
+  /* margin-top: 100px; */
+}
+.search {
+  width: 400px;
+  height: fit-content;
+}
+
+ul {
+  list-style-type: none;
+  background-color: azure;
+  margin-top: 0px;
+}
+
+li {
+  border-bottom: 1px solid black;
+  height: 25px;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  font-size: 20px;
+  padding-left: 10px;
+}
