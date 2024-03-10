@@ -1,13 +1,12 @@
 /**
  * Implement a dynamic search of countries- DONE
- * Implement debounce
  * Render the capital of the country when user clicks search button -  DONE
  */
 
 import { useState, useEffect } from "react";
 import style from "./index.module.css";
 
-export const SearchAndDebounce = () => {
+export const CountrySearch = () => {
   const [countryList, setCountryList] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [input, setInput] = useState("");
@@ -67,7 +66,7 @@ export const SearchAndDebounce = () => {
             </div>
           )}
         </div>
-        {selectedCountry?.length > 0 && (
+        {selectedCountry?.length > 0 && input.length > 0 && (
           <>
             <h3 className={style.capital}>
               Selected Country: {selectedCountry?.[0]?.name?.common}
