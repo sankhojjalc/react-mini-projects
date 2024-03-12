@@ -5,10 +5,10 @@ export const data = [
     options: ["New Delhi", "Mumbai", "Kolkata", "Chennai"],
     answer: "New Delhi",
   },
-  // {
-  //   key: 2,
-  //   question: "What is the capital of West Bengal",
-  //   options: ["New Delhi", "Mumbai", "Kolkata", "Chennai"],
-  //   answer: "Kolkata",
-  // },
+  {
+    key: 2,
+    question: "What is the capital of West Bengal",
+    options: ["New Delhi", "Mumbai", "Kolkata", "Chennai"],
+    answer: "Kolkata",
+  },
 ];
