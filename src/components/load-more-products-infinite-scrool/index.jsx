@@ -1,5 +1,9 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect, useRef, useCallback } from "react";
+/**
+ * Here we have implemented React Infinite Scrolling using Intersection Observer
+ * Reference: https://www.youtube.com/watch?v=NZKUirTtxcg
+ */
+import { useState, useEffect, useRef, useCallback } from "react";
 
 import styles from "./index.module.css";
 
