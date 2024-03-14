@@ -4,7 +4,8 @@
 // import { StarRating } from "./components/star-rating";
 // import { CountrySearch } from "./components/search-country";
 // import { QuizApp } from "./components/kbc-quiz-game";
-import { LoadProducts } from "./components/load-more-products";
+// import { LoadProducts } from "./components/load-more-products";
+import { LoadProducts } from "./components/load-more-products-infinite-scrool";
 
 export const App = () => (
   <>

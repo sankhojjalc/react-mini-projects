@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
 import styles from "./index.module.css";
 
-const Product = ({ product }) => {
+const Product = ({ product, innerRef }) => {
   return (
-    <div className={styles.productWrapper}>
+    <div className={styles.productWrapper} ref={innerRef ?? null}>
       <img
         src={product.thumbnail}
         alt={product.title}
@@ -23,6 +23,7 @@ export const LoadProducts = () => {
   const [productList, setProductList] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [count, setCount] = useState(0);
+  const observer = useRef();
 
   const fetchProducts = async () => {
     setIsLoading(true);
@@ -46,25 +47,41 @@ export const LoadProducts = () => {
     fetchProducts();
   }, [count]);
 
-  const handleClick = () => {
-    if (count <= productList.total) {
-      setCount(count + 10);
-    }
-  };
+  const lastProductRef = useCallback(
+    (node) => {
+      if (isLoading) return;
 
-  const renderProducts = productList?.products?.map((product) => (
-    <Product product={product} key={product.id} />
-  ));
+      observer?.current?.disconnect();
+      observer.current = new IntersectionObserver(
+        (entries) => {
+          if (entries[0]?.isIntersecting) {
+            setCount((count) => count + 10);
+          }
+        },
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.5,
+        }
+      );
+      if (node) observer.current.observe(node);
+    },
+    [isLoading]
+  );
+
+  const renderProducts = productList?.products?.map((product) => {
+    if (productList?.products?.length === product.id) {
+      return (
+        <Product product={product} innerRef={lastProductRef} key={product.id} />
+      );
+    }
+    return <Product product={product} key={product.id} />;
+  });
 
   return (
     <>
       <div className={styles.appWrapper}>
         <div className={styles.prod}>{renderProducts}</div>
-        <div className={styles.button}>
-          <button disabled={isLoading || count === 90} onClick={handleClick}>
-            {isLoading ? "Loading" : "Load More Products"}
-          </button>
-        </div>
       </div>
     </>
   );
