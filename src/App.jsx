@@ -5,7 +5,8 @@
 // import { CountrySearch } from "./components/search-country";
 // import { QuizApp } from "./components/kbc-quiz-game";
 // import { LoadProducts } from "./components/load-more-products";
-import { LoadProducts } from "./components/load-more-products-infinite-scrool";
+// import { LoadProducts } from "./components/load-more-products-infinite-scroll";
+import { SelectTheSquare } from "./components/select-the-sqaure";
 
 export const App = () => (
   <>
@@ -15,6 +16,7 @@ export const App = () => (
     {/* <StarRating /> */}
     {/* <CountrySearch /> */}
     {/* <QuizApp /> */}
-    <LoadProducts />
+    {/* <LoadProducts /> */}
+    <SelectTheSquare />
   </>
 );
