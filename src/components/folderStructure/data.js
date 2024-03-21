@@ -73,7 +73,7 @@ export const data = {
           ],
         },
         {
-          name: "Rathendranath",
+          name: "Ramendranath",
           key: "1-3",
           children: [
             {
@@ -94,11 +94,17 @@ export const data = {
             {
               name: "Rajat",
               key: "1-3-3",
+              children: [
+                {
+                  name: "Ruphali",
+                  key: "1-3-3-1",
+                },
+              ],
             },
           ],
         },
         {
-          name: "Ramendranath",
+          name: "Rathindranath",
           key: "1-4",
         },
         {
