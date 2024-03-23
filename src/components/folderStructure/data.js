@@ -51,7 +51,7 @@ export const data = {
           key: "1-2",
           children: [
             {
-              name: "Priya",
+              name: "Preeti",
               key: "1-2-1",
             },
             {
