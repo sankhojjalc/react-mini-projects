@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useNewLocalStorage } from "../../hooks/useLocalStorage";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 import { Navbar } from "./component/navbar";
 import { Page1 } from "./pages/page1";
@@ -9,7 +9,7 @@ import { Page3 } from "./pages/page3";
 import styles from "./index.module.css";
 
 export const DarkLightTheme = () => {
-  const [theme, toggleTheme] = useNewLocalStorage();
+  const [theme, toggleTheme] = useLocalStorage();
 
   return (
     <BrowserRouter>
