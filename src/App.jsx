@@ -7,7 +7,8 @@
 // import { LoadProducts } from "./components/load-more-products";
 // import { LoadProducts } from "./components/load-more-products-infinite-scroll";
 // import { SelectTheSquare } from "./components/select-the-sqaure";
-import { FolderStructure } from "./components/folderStructure";
+// import { FolderStructure } from "./components/folderStructure";
+import { DarkLightTheme } from "./components/dark-light-mode";
 
 export const App = () => (
   <>
@@ -19,6 +20,7 @@ export const App = () => (
     {/* <QuizApp /> */}
     {/* <LoadProducts /> */}
     {/* <SelectTheSquare /> */}
-    <FolderStructure />
+    {/* <FolderStructure /> */}
+    <DarkLightTheme />
   </>
 );
