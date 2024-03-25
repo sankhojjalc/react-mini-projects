@@ -18,3 +18,30 @@ export const useLocalStorage = () => {
 
   return [theme, toggleTheme];
 };
+
+// ALTERNATE APPROACH
+
+// export const useNewLocalStorage = () => {
+//   const [theme, setTheme] = useState("light");
+
+//   useEffect(() => {
+//     const storageTheme = localStorage.getItem("theme");
+//     if (storageTheme) {
+//       setTheme(storageTheme);
+//     } else {
+//       localStorage.setItem("theme", theme);
+//     }
+//   }, [theme]);
+
+//   const toggleTheme = () => {
+//     const newTheme = theme === "dark" ? "light" : "dark";
+//     setTheme(newTheme);
+//     localStorage.setItem("theme", newTheme);
+//   };
+
+//   useEffect(() => {
+//     document.documentElement.setAttribute("data-theme", theme);
+//   }, [theme]);
+
+//   return [theme, toggleTheme];
+// };
