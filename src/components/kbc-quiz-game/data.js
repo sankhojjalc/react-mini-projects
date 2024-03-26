@@ -11,4 +11,15 @@ export const data = [
     options: ["New Delhi", "Mumbai", "Kolkata", "Chennai"],
     answer: "Kolkata",
   },
+  {
+    key: 3,
+    question: "Who is the PM of India?",
+    options: [
+      "Narendra Modi",
+      "Mamata Banerjee",
+      "Rahul Gandhi",
+      "Arvind Kejriwal",
+    ],
+    answer: "Kolkata",
+  },
 ];
