@@ -20,6 +20,6 @@ export const data = [
       "Rahul Gandhi",
       "Arvind Kejriwal",
     ],
-    answer: "Kolkata",
+    answer: "Narendra Modi",
   },
 ];
