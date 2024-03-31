@@ -8,7 +8,8 @@
 // import { LoadProducts } from "./components/load-more-products-infinite-scroll";
 // import { SelectTheSquare } from "./components/select-the-sqaure";
 // import { FolderStructure } from "./components/folderStructure";
-import { DarkLightTheme } from "./components/dark-light-mode";
+// import { DarkLightTheme } from "./components/dark-light-mode";
+import { ScrollIndicator } from "./components/scroll-indicator";
 
 export const App = () => (
   <>
@@ -21,6 +22,7 @@ export const App = () => (
     {/* <LoadProducts /> */}
     {/* <SelectTheSquare /> */}
     {/* <FolderStructure /> */}
-    <DarkLightTheme />
+    {/* <DarkLightTheme /> */}
+    <ScrollIndicator />
   </>
 );
