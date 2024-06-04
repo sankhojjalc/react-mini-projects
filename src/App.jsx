@@ -9,7 +9,9 @@
 // import { SelectTheSquare } from "./components/select-the-sqaure";
 // import { FolderStructure } from "./components/folderStructure";
 // import { DarkLightTheme } from "./components/dark-light-mode";
-import { ScrollIndicator } from "./components/scroll-indicator";
+// import { ScrollIndicator } from "./components/scroll-indicator";
+import Product from "./components/useContextExample";
+import { ProductContextProvider } from "./context/productsContext";
 
 export const App = () => (
   <>
@@ -23,6 +25,9 @@ export const App = () => (
     {/* <SelectTheSquare /> */}
     {/* <FolderStructure /> */}
     {/* <DarkLightTheme /> */}
-    <ScrollIndicator />
+    {/* <ScrollIndicator /> */}
+    <ProductContextProvider>
+      <Product />
+    </ProductContextProvider>
   </>
 );
