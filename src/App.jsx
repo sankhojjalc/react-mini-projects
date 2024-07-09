@@ -10,8 +10,9 @@
 // import { FolderStructure } from "./components/folderStructure";
 // import { DarkLightTheme } from "./components/dark-light-mode";
 // import { ScrollIndicator } from "./components/scroll-indicator";
-import Product from "./components/useContextExample";
-import { ProductContextProvider } from "./context/productsContext";
+// import Product from "./components/useContextExample";
+// import { ProductContextProvider } from "./context/productsContext";
+import { TrafficLight } from "./components/traffic-light";
 
 export const App = () => (
   <>
@@ -26,8 +27,9 @@ export const App = () => (
     {/* <FolderStructure /> */}
     {/* <DarkLightTheme /> */}
     {/* <ScrollIndicator /> */}
-    <ProductContextProvider>
+    {/* <ProductContextProvider>
       <Product />
-    </ProductContextProvider>
+    </ProductContextProvider> */}
+    <TrafficLight />
   </>
 );
