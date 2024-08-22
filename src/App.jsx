@@ -12,7 +12,8 @@
 // import { ScrollIndicator } from "./components/scroll-indicator";
 // import Product from "./components/useContextExample";
 // import { ProductContextProvider } from "./context/productsContext";
-import { TrafficLight } from "./components/traffic-light";
+// import { TrafficLight } from "./components/traffic-light";
+import { RenderPhotos } from "./components/RenderImage";
 
 export const App = () => (
   <>
@@ -30,6 +31,7 @@ export const App = () => (
     {/* <ProductContextProvider>
       <Product />
     </ProductContextProvider> */}
-    <TrafficLight />
+    {/* <TrafficLight /> */}
+    <RenderPhotos />
   </>
 );
