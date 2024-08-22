@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
-export const FolderSvg = ({ albumName }) => {
+import { useNavigate } from "react-router-dom";
+export const FolderSvg = (props) => {
+  const navigate = useNavigate();
+  const handleClick = () => navigate(`/album/${props?.item?.id}`);
+
   return (
     <div
       style={{ display: "flex", flexDirection: "column", cursor: "pointer" }}
+      onClick={handleClick}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +35,7 @@ export const FolderSvg = ({ albumName }) => {
           height: "20px",
         }}
       >
-        {albumName}
+        {props?.item?.title}
       </span>
     </div>
   );

@@ -18,7 +18,7 @@ export const usePhotoData = () => {
     fetchData(
       `https://jsonplaceholder.typicode.com/albums/${albumId}/photos`
     ).then((val) => {
-      setData({ ...data, isLoading: false, individualAlbum: val });
+      setData((prev) => ({ ...prev, isLoading: false, individualAlbum: val }));
     });
   };
 

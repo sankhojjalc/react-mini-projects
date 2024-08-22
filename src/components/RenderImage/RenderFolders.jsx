@@ -20,7 +20,7 @@ export const RenderFolders = () => {
       }}
     >
       {data?.albumData?.map((item) => (
-        <FolderSvg key={item.id} albumName={item.title} />
+        <FolderSvg key={item.id} item={item} />
       ))}
     </div>
   );
