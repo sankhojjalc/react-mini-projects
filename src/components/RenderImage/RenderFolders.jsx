@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { usePhotoData } from "./Hooks/usePhotoData";
 import { FolderSvg } from "./components/Folder.jsx";
 
-export const RenderFolders = () => {
+const RenderFolders = () => {
   const { data, loadAlbumData } = usePhotoData();
   useEffect(() => {
     loadAlbumData();
@@ -25,3 +25,5 @@ export const RenderFolders = () => {
     </div>
   );
 };
+
+export default RenderFolders;

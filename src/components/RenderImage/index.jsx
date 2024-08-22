@@ -5,25 +5,29 @@
 // render the album using: https://jsonplaceholder.typicode.com/albums/1/photos
 // render the album using: https://jsonplaceholder.typicode.com/photos/1
 
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PhotoContextProvider } from "./context/PhotosContext.jsx";
-import { RenderFolders } from "./RenderFolders.jsx";
-import { RenderThumbnails } from "./RenderThumbnails.jsx";
-import { RenderImage } from "./RenderImage.jsx";
+
+const RenderFolders = lazy(() => import("./RenderFolders.jsx"));
+const RenderThumbnails = lazy(() => import("./RenderThumbnails.jsx"));
+const RenderImage = lazy(() => import("./RenderImage.jsx"));
 
 export const RenderPhotos = () => {
   return (
     <PhotoContextProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" Component={RenderFolders} />
-          <Route path="/album/:albumId" Component={RenderThumbnails} />
-          <Route
-            path="/album/:albumId/photo/:photoId"
-            Component={RenderImage}
-          />
-        </Routes>
-      </BrowserRouter>
+      <Suspense fallback={<p>Loading...</p>}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" Component={RenderFolders} />
+            <Route path="/album/:albumId" Component={RenderThumbnails} />
+            <Route
+              path="/album/:albumId/photo/:photoId"
+              Component={RenderImage}
+            />
+          </Routes>
+        </BrowserRouter>
+      </Suspense>
     </PhotoContextProvider>
   );
 };
