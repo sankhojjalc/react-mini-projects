@@ -1,11 +1,27 @@
 import { useEffect } from "react";
 import { usePhotoData } from "./Hooks/usePhotoData";
+import { FolderSvg } from "./components/Folder.jsx";
+
 export const RenderFolders = () => {
   const { data, loadAlbumData } = usePhotoData();
   useEffect(() => {
     loadAlbumData();
   }, []);
 
-  console.log("data---->", data);
-  return <h1>Rendering Folders</h1>;
+  return data?.isLoading ? (
+    <h1>Loading</h1>
+  ) : (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "10px",
+        justifyContent: "space-evenly",
+      }}
+    >
+      {data?.albumData?.map((item) => (
+        <FolderSvg key={item.id} albumName={item.title} />
+      ))}
+    </div>
+  );
 };
