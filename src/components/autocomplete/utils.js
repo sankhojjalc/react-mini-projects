@@ -24,3 +24,16 @@ export function debounce(fn, delay) {
     });
   };
 }
+
+export const cacheData = (fn) => {
+  const cache = {};
+  return async (...args) => {
+    if (cache[args]) {
+      return cache[args];
+    } else {
+      const result = await fn(...args);
+      cache[args] = result;
+      return result;
+    }
+  };
+};

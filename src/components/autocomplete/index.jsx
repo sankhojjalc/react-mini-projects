@@ -1,15 +1,17 @@
 import { useState } from "react";
 
-import { getFruitsData, debounce } from "./utils";
+import { getFruitsData, debounce, cacheData } from "./utils";
 import styles from "./index.module.css";
+
+const debouncedFn = debounce(getFruitsData, 500);
+const cacheResult = cacheData(debouncedFn);
 
 export const AutoCompleteSearch = () => {
   const [fruits, setFruits] = useState([]);
-  const debouncedFn = debounce(getFruitsData, 500);
 
   const handleOnChange = async (e) => {
     if (e.target.value !== "") {
-      const data = await debouncedFn(e.target.value);
+      const data = await cacheResult(e.target.value);
       setFruits(data);
     } else {
       setFruits([]);
