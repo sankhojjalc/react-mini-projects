@@ -1,0 +1,17 @@
+.searchBox {
+  width: 75%;
+  height: 50px;
+}
+.searchWrapper {
+  width: 75%;
+  border: 1px solid black;
+}
+.searchResult {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.searchItem {
+  height: 30px;
+  background-color: rgb(233, 229, 229);
+  margin-top: 5px;
+}

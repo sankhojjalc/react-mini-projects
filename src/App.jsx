@@ -13,7 +13,8 @@
 // import Product from "./components/useContextExample";
 // import { ProductContextProvider } from "./context/productsContext";
 // import { TrafficLight } from "./components/traffic-light";
-import { RenderPhotos } from "./components/RenderImage";
+// import { RenderPhotos } from "./components/RenderImage";
+import { AutoCompleteSearch } from "./components/autocomplete";
 
 export const App = () => (
   <>
@@ -32,6 +33,7 @@ export const App = () => (
       <Product />
     </ProductContextProvider> */}
     {/* <TrafficLight /> */}
-    <RenderPhotos />
+    {/* <RenderPhotos /> */}
+    <AutoCompleteSearch />
   </>
 );
