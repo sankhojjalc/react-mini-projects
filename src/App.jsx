@@ -14,7 +14,8 @@
 // import { ProductContextProvider } from "./context/productsContext";
 // import { TrafficLight } from "./components/traffic-light";
 // import { RenderPhotos } from "./components/RenderImage";
-import { AutoCompleteSearch } from "./components/autocomplete";
+// import { AutoCompleteSearch } from "./components/autocomplete";
+import { RenderListInRecursion } from "./components/renderList";
 
 export const App = () => (
   <>
@@ -34,6 +35,7 @@ export const App = () => (
     </ProductContextProvider> */}
     {/* <TrafficLight /> */}
     {/* <RenderPhotos /> */}
-    <AutoCompleteSearch />
+    {/* <AutoCompleteSearch /> */}
+    <RenderListInRecursion />
   </>
 );
