@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { usePhotoData } from "./Hooks/usePhotoData";
@@ -7,19 +7,18 @@ import { Image } from "./components/Image";
 const RenderImage = () => {
   const { albumId, photoId } = useParams();
   const { loadPhoto, data } = usePhotoData();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     loadPhoto(photoId);
   }, []);
-
-  console.log("Final Data", data);
 
   return (
     <>
       <h1>
         Rendering Image from Album {albumId} and PhotoId {photoId}
       </h1>
-      {data?.isLoading ? (
+      {data?.isLoading && !imageLoaded && (
         <div
           style={{
             height: "600px",
@@ -28,8 +27,12 @@ const RenderImage = () => {
             background: "gray",
           }}
         ></div>
-      ) : (
-        <Image src={data?.individualPhoto?.url} />
+      )}
+      {(data?.isLoading || imageLoaded) && (
+        <Image
+          src={data?.individualPhoto?.url}
+          setImageLoaded={setImageLoaded}
+        />
       )}
       <div>{data?.individualPhoto?.title}</div>
     </>
