@@ -3,7 +3,7 @@ import { useState } from "react";
 import { getFruitsData, debounce, cacheData } from "./utils";
 import styles from "./index.module.css";
 
-const debouncedFn = debounce(getFruitsData, 500);
+const debouncedFn = debounce(getFruitsData, 300);
 const cacheResult = cacheData(debouncedFn);
 
 export const AutoCompleteSearch = () => {

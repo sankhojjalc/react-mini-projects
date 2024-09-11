@@ -2,12 +2,12 @@ import { fruitsData } from "./data";
 
 export const getFruitsData = (keyword) => {
   const data = fruitsData.filter((item) =>
-    item.toLocaleLowerCase().includes(keyword)
+    item.toLowerCase().includes(keyword)
   );
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(data);
-    }, 2000);
+    }, 300);
   });
 };
 
