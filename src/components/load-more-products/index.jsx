@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
+import { Shimmer } from "../shimmer";
 
 import styles from "./index.module.css";
 
@@ -59,7 +60,26 @@ export const LoadProducts = () => {
   return (
     <>
       <div className={styles.appWrapper}>
-        <div className={styles.prod}>{renderProducts}</div>
+        <div className={styles.prod}>
+          <>{renderProducts}</>
+          {isLoading && (
+            <>
+              {Array(10)
+                .fill(0)
+                .map((i, idx) => (
+                  <Shimmer
+                    key={idx}
+                    type="rectangle"
+                    shimmerProps={{
+                      height: "260px",
+                      width: "240px",
+                      borderProps: "1px solid black",
+                    }}
+                  />
+                ))}
+            </>
+          )}
+        </div>
         <div className={styles.button}>
           <button disabled={isLoading || count === 90} onClick={handleClick}>
             {isLoading ? "Loading" : "Load More Products"}
