@@ -4,7 +4,7 @@
 // import { StarRating } from "./components/star-rating";
 // import { CountrySearch } from "./components/search-country";
 // import { QuizApp } from "./components/kbc-quiz-game";
-import { LoadProducts } from "./components/load-more-products";
+// import { LoadProducts } from "./components/load-more-products";
 // import { LoadProducts } from "./components/load-more-products-infinite-scroll";
 // import { SelectTheSquare } from "./components/select-the-sqaure";
 // import { FolderStructure } from "./components/folderStructure";
@@ -16,6 +16,7 @@ import { LoadProducts } from "./components/load-more-products";
 // import { RenderPhotos } from "./components/RenderImage";
 // import { AutoCompleteSearch } from "./components/autocomplete";
 // import { RenderListInRecursion } from "./components/renderList";
+import { ProtectedRoutes } from "./components/protectedRoutes";
 
 export const App = () => {
   return (
@@ -26,7 +27,7 @@ export const App = () => {
       {/* <StarRating /> */}
       {/* <CountrySearch /> */}
       {/* <QuizApp /> */}
-      <LoadProducts />
+      {/* <LoadProducts /> */}
       {/* <SelectTheSquare /> */}
       {/* <FolderStructure /> */}
       {/* <DarkLightTheme /> */}
@@ -38,6 +39,7 @@ export const App = () => {
       {/* <RenderPhotos /> */}
       {/* <AutoCompleteSearch /> */}
       {/* <RenderListInRecursion /> */}
+      <ProtectedRoutes />
     </>
   );
 };
