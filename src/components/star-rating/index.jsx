@@ -11,12 +11,22 @@ const Star = ({ setSelectedStar, starId, setHoveredStar }) => (
     onClick={() => setSelectedStar(starId)}
   ></i>
 );
-const FilledStar = ({ setSelectedStar, starId, setHoveredStar }) => (
+const FilledStar = ({
+  setSelectedStar,
+  starId,
+  setHoveredStar,
+  selectedStar,
+}) => (
   <i
     className="bi bi-star-fill"
     style={{ fontSize: "2rem" }}
     onClick={() => setSelectedStar(starId)}
     onMouseOver={() => setHoveredStar(starId)}
+    onMouseLeave={() => {
+      if (!selectedStar) {
+        setHoveredStar(0);
+      }
+    }}
   ></i>
 );
 
@@ -24,21 +34,22 @@ export const StarRating = () => {
   const [selectedStar, setSelectedStar] = useState(0);
   const [hoveredStar, setHoveredStar] = useState(0);
 
-  return stars.map((star) => {
-    return star <= (selectedStar || hoveredStar) ? (
+  return stars.map((star) =>
+    star <= (selectedStar || hoveredStar) ? (
       <FilledStar
-        setSelectedStar={setSelectedStar}
-        starId={star}
         key={star}
+        starId={star}
+        selectedStar={selectedStar}
         setHoveredStar={setHoveredStar}
+        setSelectedStar={setSelectedStar}
       />
     ) : (
       <Star
         key={star}
-        setSelectedStar={setSelectedStar}
         starId={star}
         setHoveredStar={setHoveredStar}
+        setSelectedStar={setSelectedStar}
       />
-    );
-  });
+    )
+  );
 };
