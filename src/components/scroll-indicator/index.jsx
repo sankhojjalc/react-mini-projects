@@ -12,14 +12,6 @@ export const ScrollIndicator = () => {
   };
 
   const calcScrollPercentage = () => {
-    console.log(
-      "param",
-      document.body.scrollTop,
-      document.documentElement.scrollTop,
-      document.documentElement.scrollHeight,
-      document.documentElement.clientHeight
-    );
-
     const howMuchScrolled =
       document.body.scrollTop || document.documentElement.scrollTop;
 
