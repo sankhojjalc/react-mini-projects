@@ -16,7 +16,8 @@
 // import { RenderPhotos } from "./components/RenderImage";
 // import { AutoCompleteSearch } from "./components/autocomplete";
 // import { RenderListInRecursion } from "./components/renderList";
-import { ProtectedRoutes } from "./components/protectedRoutes";
+// import { ProtectedRoutes } from "./components/protectedRoutes";
+import { BrowserPagination } from "./components/BrowserPagination";
 
 export const App = () => {
   return (
@@ -39,7 +40,8 @@ export const App = () => {
       {/* <RenderPhotos /> */}
       {/* <AutoCompleteSearch /> */}
       {/* <RenderListInRecursion /> */}
-      <ProtectedRoutes />
+      {/* <ProtectedRoutes /> */}
+      <BrowserPagination />
     </>
   );
 };
