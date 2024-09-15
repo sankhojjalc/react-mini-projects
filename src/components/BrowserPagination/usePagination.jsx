@@ -12,7 +12,12 @@ export const usePagination = () => {
       val.users,
       data.usersPerPage
     );
-    setData((prev) => ({ ...prev, users: chunkedData, numberOfPages }));
+    setData((prev) => ({
+      ...prev,
+      users: chunkedData,
+      originalData: val.users,
+      numberOfPages,
+    }));
   };
 
   const setPageData = (pageNumber) => {
@@ -29,10 +34,15 @@ export const usePagination = () => {
 
   useEffect(() => {
     const { numberOfPages, chunkedData } = chunkDataAccordingToDataPerPage(
-      data.users,
+      data.originalData,
       data.usersPerPage
     );
-    setData((prev) => ({ ...prev, users: chunkedData, numberOfPages }));
+    setData((prev) => ({
+      ...prev,
+      users: chunkedData,
+      numberOfPages,
+      currentPage: 0,
+    }));
   }, [data?.usersPerPage]);
 
   return { data, setPageData, setUsersPerPage };

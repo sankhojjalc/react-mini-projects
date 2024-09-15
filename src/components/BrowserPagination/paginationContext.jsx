@@ -8,6 +8,7 @@ const initialState = {
   currentPage: 0,
   usersPerPage: 20,
   numberOfPages: 1,
+  originalData: [],
 };
 
 export const PaginationContextProvider = ({ children }) => {

@@ -4,7 +4,6 @@ export const PaginationWrapper = () => {
   const { data, setPageData } = usePagination();
   const arr = new Array(data.numberOfPages).fill(0);
 
-  console.log("data---->", data);
   const handlePreviousClick = () => {
     if (data?.currentPage > 0) {
       setPageData(data?.currentPage - 1);
@@ -22,7 +21,13 @@ export const PaginationWrapper = () => {
       </button>
       {arr.map((_, index) => {
         return (
-          <button key={index} onClick={() => setPageData(index)}>
+          <button
+            key={index}
+            onClick={() => setPageData(index)}
+            style={{
+              backgroundColor: data?.currentPage === index ? "#80A6FF" : null,
+            }}
+          >
             {index + 1}
           </button>
         );
