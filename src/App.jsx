@@ -18,7 +18,8 @@
 // import { RenderListInRecursion } from "./components/renderList";
 // import { ProtectedRoutes } from "./components/protectedRoutes";
 // import { BrowserPagination } from "./components/BrowserPagination";
-import { UsersRedux } from "./components/usersRedux";
+// import { UsersRedux } from "./components/usersRedux";
+import { TrafficLightCustom } from "./components/traffix-light-custom";
 
 export const App = () => {
   return (
@@ -43,7 +44,8 @@ export const App = () => {
       {/* <RenderListInRecursion /> */}
       {/* <ProtectedRoutes /> */}
       {/* <BrowserPagination /> */}
-      <UsersRedux />
+      {/* <UsersRedux /> */}
+      <TrafficLightCustom />
     </>
   );
 };
