@@ -17,7 +17,8 @@
 // import { AutoCompleteSearch } from "./components/autocomplete";
 // import { RenderListInRecursion } from "./components/renderList";
 // import { ProtectedRoutes } from "./components/protectedRoutes";
-import { BrowserPagination } from "./components/BrowserPagination";
+// import { BrowserPagination } from "./components/BrowserPagination";
+import { UsersRedux } from "./components/usersRedux";
 
 export const App = () => {
   return (
@@ -41,7 +42,8 @@ export const App = () => {
       {/* <AutoCompleteSearch /> */}
       {/* <RenderListInRecursion /> */}
       {/* <ProtectedRoutes /> */}
-      <BrowserPagination />
+      {/* <BrowserPagination /> */}
+      <UsersRedux />
     </>
   );
 };
