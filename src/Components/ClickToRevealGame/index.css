@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: chartreuse;
+  align-items: center;
+}
+.items {
+  height: 120px;
+  width: 120px;
+  border: 1px black solid;
+  text-align: center;
+  line-height: 120px;
+  background-color: bisque;
+}
