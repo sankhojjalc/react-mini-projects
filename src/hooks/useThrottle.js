@@ -1,19 +1,31 @@
 import { useState, useRef, useEffect } from "react";
 
 export const useThrottle = (value, delay = 300) => {
-  const [throttleValue, setThrottleValue] = useState(value);
-  const lastExecutedRef = useRef(Date.now());
+  const [throttledValue, setThrottledValue] = useState(value);
+  const lastExecuted = useRef(0);
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
-    const handler = setTimeout(() => {
-      if (Date.now() - lastExecutedRef.current > delay) {
-        setThrottleValue(value);
-        lastExecutedRef.current = Date.now();
-      }
-    }, delay - (Date.now() - lastExecutedRef.current));
+    const now = Date.now();
+    const remaining = delay - (now - lastExecuted.current);
 
-    return () => clearTimeout(handler);
+    if (remaining <= 0) {
+      // Execute immediately
+      setThrottledValue(value);
+      lastExecuted.current = now;
+    } else {
+      // Schedule execution if not already scheduled
+      if (!timeoutRef.current) {
+        timeoutRef.current = setTimeout(() => {
+          setThrottledValue(value);
+          lastExecuted.current = Date.now();
+          timeoutRef.current = null;
+        }, remaining);
+      }
+    }
+
+    return () => clearTimeout(timeoutRef.current);
   }, [value, delay]);
 
-  return throttleValue;
+  return throttledValue;
 };
