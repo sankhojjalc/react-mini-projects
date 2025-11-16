@@ -6,32 +6,27 @@ export const useThrottledWindowResize = (delay = 200) => {
     height: typeof window !== "undefined" ? window.innerHeight : 0,
   });
 
-  const timeoutRef = useRef(null);
+  const lastRun = useRef(0);
 
   const handleResize = useCallback(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    timeoutRef.current = setTimeout(() => {
+    const now = Date.now();
+
+    if (now - lastRun.current >= delay) {
+      lastRun.current = now;
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
-    }, delay);
+    }
   }, [delay]);
 
   useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
+    if (typeof window === "undefined") return;
 
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
     };
   }, [handleResize]);
 
